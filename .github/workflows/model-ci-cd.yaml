@@ -17,7 +17,7 @@ jobs:
         run: python src/0-split-dataset.py
 
       - name: Preprocess Dataset Train
-        run: python src/0-preprocess-dataset-train.py
+        run: python src/1-preprocess-dataset-train.py
 
       - name: Train Evaluate Models
-        run: python src/3-train-evaluate-models.py
+        run: python src/2-prepare-dataset-test.py
