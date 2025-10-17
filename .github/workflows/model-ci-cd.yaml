@@ -12,10 +12,10 @@ jobs:
           python-version: 3.12
 
       - name: Split datset
-        runs: python src/0-split-dataset.py
+        run: python src/0-split-dataset.py
 
       - name: Preprocess Dataset Train
-        runs: python src/0-preprocess-dataset-train.py
+        run: python src/0-preprocess-dataset-train.py
 
       - name: Train Evaluate Models
-        runs: python src/3-train-evaluate-models.py
+        run: python src/3-train-evaluate-models.py
