@@ -1,0 +1,21 @@
+name: Model CICD
+on: workflow_dispatch
+jobs:
+  model-ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v5
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: 3.12
+
+      - name: Split datset
+        runs: python src/0-split-dataset.py
+
+      - name: Preprocess Dataset Train
+        runs: python src/0-preprocess-dataset-train.py
+
+      - name: Train Evaluate Models
+        runs: python src/3-train-evaluate-models.py
